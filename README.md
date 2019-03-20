@@ -166,6 +166,9 @@ Once we get it down with one dataset it will be easy in another.
 
     This actually does the meat of the function:
 
+    meanGoals = 5.4
+    import math
+
     for index, row in csv.iterrows():
     TeanDict = {}
 
