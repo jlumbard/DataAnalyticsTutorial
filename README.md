@@ -135,6 +135,7 @@ Once we get it down with one dataset it will be easy in another.
   > import pandas as pd
   
   > csv = pd.read_csv('path_to_csv')
+  csv = pd.read_csv('https://raw.githubusercontent.com/jlumbard/DataAnalyticsTutorial/master/201819NHLGameData.csv')
 
   In Google Colab:
   > csv = pandas.read_csv('link_to_Raw_csv_on_Brock's_Github')
