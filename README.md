@@ -213,6 +213,8 @@ Once we get it down with one dataset it will be easy in another.
   Load up the NCAA csv, which lists rankings in the above.
 
     csv = pandas.read_csv('c:/users/brock/desktop/NCAADATA.csv')
+    from matplotlib import pyplot as plt
+    
     x = csv.plot('KenPom', 'First')
     plt.show()
 
