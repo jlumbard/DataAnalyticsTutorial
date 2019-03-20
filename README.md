@@ -21,7 +21,9 @@ DO NOT download Python 2, I'll ask you to leave.
 On the command line, (terminal on mac, windows powershell or command prompt on windows), use pip3 to install Pandas, MatPlotLib, Scikit.
 Like so:
 > pip3 install Pandas
+
 > pip3 install MatPlotLib
+
 > pip3 install SciKit
 
 Open the IDLE editor to a new shell.
@@ -74,8 +76,7 @@ Well, I googled it, discovered bbref gets their game data from a source called r
 So I downloaded one (https://www.retrosheet.org/gamelogs/index.html), it had no headers.
 found the headers: https://www.retrosheet.org/gamelogs/glfields.txt
 
-Then I found some weather data:
-https://www.ncdc.noaa.gov/cdo-web/confirmation
+Then I found some [weather data](https://www.ncdc.noaa.gov/cdo-web/confirmation)
 
 
 ## **Step 6**: A Regression
@@ -103,12 +104,13 @@ Buttt: were they all played on the day they said they were? Lets make that assum
 This model is getting worse the more assumptions are in it.
 
 Now lets fix up our dates (Or I'll fix them up for you)
-`=DATE(ROUND(_GL2018[@Column1]/10000,0),ROUND((_GL2018[@Column1]-20180000)/100,0),_GL2018[@Column1]-20180000-ROUND((_GL2018[@Column1]-20180000)/100,0)*100)`
+
+  > =DATE(ROUND(_GL2018[@Column1]/10000,0),ROUND((_GL2018[@Column1]-20180000)/100,0),_GL2018[@Column1]-20180000-ROUND((_GL2018[@Column1]-20180000)/100,0)*100)
 
 Use that forumla, and don't ask why we're using it!
 
 Then pull the wind data:
-    =VLOOKUP([@Column8],OHareDataRequest!$C$2:$L$442,2)
+  > =VLOOKUP([@Column8],OHareDataRequest!$C$2:$L$442,2)
 
 Now you have your two columns! Lets run a regression!
 
@@ -218,6 +220,8 @@ Once we get it down with one dataset it will be easy in another.
     x = csv.BPI.values
     y = csv.First.values
 
+    length = 64
+    
     x = x.reshape(length, 1)
     y = y.reshape(length, 1)
 
